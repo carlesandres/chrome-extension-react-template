@@ -1,5 +1,8 @@
 # React Chrome Extension Template
 
+> [!NOTE] This a fork/evolution of
+> [5tigerjelly/chrome-extension-react-template](https://github.com/5tigerjelly/chrome-extension-react-template)
+
 This is a template for creating a Chrome extension using React and [Vite](https://vitejs.dev/) with TypeScript.
 
 
@@ -15,7 +18,7 @@ Make sure you have [Node.js](https://nodejs.org/) (version 18+ or 20+) installed
 
     ```sh
     # To clone
-    git clone https://github.com/5tigerjelly/chrome-extension-react-template
+    git clone https://github.com/carlesandres/chrome-extension-react-template
     cd chrome-extension-react-template
     ```
 
