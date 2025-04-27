@@ -5,9 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "copy-to-distribution": "cp public/manifest.json distribution/manifest.json && cp public/icon.png distribution/icon.png",
+    "prebuild": "rimraf distribution && mkdir distribution",
+    "build": "tsc -b && vite build --outDir distribution",
+    "postbuild": "npm run copy-to-distribution",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prettify": "npx prettier --write --log-level silent .",
+    "watch": "node watch.js",
+    "zip": "rimraf zipped.zip || true && zip -r zipped.zip distribution/",
+    "start:firefox": "web-ext run --source-dir ./distribution/",
+    "release": "webstore upload --source=distribution --auto-publish"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.3",
